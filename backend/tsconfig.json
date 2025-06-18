@@ -1,0 +1,28 @@
+{
+    "compilerOptions": {
+      "target": "ES6",
+      "module": "commonjs",
+      "outDir": "./dist",
+      "rootDir": "./",  // Keep as-is since you're not using /src
+      "strict": true,
+      "esModuleInterop": true,
+      "allowJs": true,
+      "checkJs": false,
+      "resolveJsonModule": true,
+      "allowSyntheticDefaultImports": true,
+      "baseUrl": ".",  // baseUrl works fine at root
+      "paths": {
+        "@custom_errors/*": ["errors/custom_errors/*"],
+        "@config/*": ["config/*"],
+        "@middleware/*": ["middleware/*"],
+        "@routes/*": ["routes/*"],
+        "@hooks/*": ["hooks/*"],
+      }
+    },
+    "include": ["*.ts", "**/*.ts", "config/mongodb.ts"],   // More targeted
+    "exclude": ["node_modules", "dist"],
+    "ts-node": {
+      "files": true
+    }
+  }
+  
