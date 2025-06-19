@@ -1,5 +1,5 @@
-// app/ClientRoot.tsx
 'use client';
+// Turbopack/webpack may cause this to rerun on every route change - this only occurs during development
 
 import getUserToken from '@src/hooks/users/getUserToken';
 import logoutUser from '@src/hooks/users/logoutUser';
@@ -19,7 +19,7 @@ export const AuthProvider = ({ children }: any) => {
         const userToken = await getUserToken();
         if (userToken) {
             setIsAuthenticated(true);
-            console.log('Is authenticated');
+            //console.log('Is authenticated');
         }
     }
 
