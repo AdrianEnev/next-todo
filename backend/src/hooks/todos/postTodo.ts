@@ -3,9 +3,9 @@ import Todo from '../../models/Todo';
 const postTodo = async (
     title: string,
     description: string,
+    userId: string,
     dueDate?: Date,
     priority?: string,
-    userId?: string
 ) => {
     try {
         // Encrypt password
@@ -18,10 +18,10 @@ const postTodo = async (
         });
         await todo.save();
         console.log('Todo added successfully:', todo);
-        return todo;
+        return { success: true, todo: todo };
     } catch (err: any) {
         console.log('Error adding todo:', err.message);
-        return err
+        return { success: false, error: err.message };
     }
 }
 

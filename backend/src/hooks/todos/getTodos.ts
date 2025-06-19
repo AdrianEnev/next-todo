@@ -1,8 +1,8 @@
 import Todo from "../../models/Todo";
 
-const getTodos = async (id: string) => {
+const getTodos = async (userId: string) => {
     try{
-        const todos = await Todo.find({_id: id});
+        const todos = await Todo.find({userId: userId});
         return todos;
     }catch (error: any) {
         console.error("Error fetching todos:", error.message);

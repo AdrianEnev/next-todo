@@ -38,6 +38,7 @@ A simple ToDo application built for educational purposes
 ### Prerequisites
 
 - Node.js v18+
+- Nodemon
 - MongoDB instance (local or cloud)
 
 ### Installation
